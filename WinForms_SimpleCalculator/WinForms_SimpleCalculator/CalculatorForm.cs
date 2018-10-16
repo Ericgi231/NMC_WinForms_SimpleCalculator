@@ -21,22 +21,22 @@ namespace WinForms_SimpleCalculator
         {
             int num1, num2, num3;
             bool pass = true;
-            lbl_CostOfItem.ForeColor = Color.Black;
-            lbl_QuantityOfItem.ForeColor = Color.Black;
+            lbl_Cost1.ForeColor = Color.Black;
+            lbl_Quantity1.ForeColor = Color.Black;
 
             //num1
-            if (!int.TryParse(tb_Cost.Text, out num1))
+            if (!int.TryParse(tb_Cost1.Text, out num1))
             {
-                lbl_CostOfItem.ForeColor = Color.Red;
-                tb_Cost.Focus();
+                lbl_Cost1.ForeColor = Color.Red;
+                tb_Cost1.Focus();
                 pass = false;
             }
 
             //num2
-            if (!int.TryParse(tb_Quantity.Text, out num2))
+            if (!int.TryParse(tb_Quantity1.Text, out num2))
             {
-                lbl_QuantityOfItem.ForeColor = Color.Red;
-                tb_Quantity.Focus();
+                lbl_Quantity1.ForeColor = Color.Red;
+                tb_Quantity1.Focus();
                 pass = false;
             }
 
@@ -44,8 +44,8 @@ namespace WinForms_SimpleCalculator
 
             if (pass)
             {
-                tb_Total.Text = (num1 * num2).ToString();
-                tb_TotalPerPerson.Text = ((num1 * num2) / num3).ToString();
+                tb_Total.Text = "$" + (num1 * num2).ToString();
+                tb_TotalPerPerson.Text = "$" + ((num1 * num2) / num3).ToString();
             }
         }
     }
