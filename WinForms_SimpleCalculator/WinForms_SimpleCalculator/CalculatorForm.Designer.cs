@@ -34,11 +34,7 @@
             this.lbl_Quantity1 = new System.Windows.Forms.Label();
             this.tb_Quantity1 = new System.Windows.Forms.TextBox();
             this.butt_Calculate = new System.Windows.Forms.Button();
-            this.tb_Total = new System.Windows.Forms.TextBox();
             this.lbl_Roomates = new System.Windows.Forms.Label();
-            this.lbl_TotalCost = new System.Windows.Forms.Label();
-            this.lbl_PerCost = new System.Windows.Forms.Label();
-            this.tb_TotalPerPerson = new System.Windows.Forms.TextBox();
             this.nud_Roomates = new System.Windows.Forms.NumericUpDown();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,6 +56,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.butt_Reset = new System.Windows.Forms.Button();
+            this.butt_Help = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Roomates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gb_Purchases.SuspendLayout();
@@ -106,19 +104,11 @@
             // 
             this.butt_Calculate.Location = new System.Drawing.Point(224, 241);
             this.butt_Calculate.Name = "butt_Calculate";
-            this.butt_Calculate.Size = new System.Drawing.Size(108, 37);
+            this.butt_Calculate.Size = new System.Drawing.Size(108, 34);
             this.butt_Calculate.TabIndex = 3;
             this.butt_Calculate.Text = "Calculate";
             this.butt_Calculate.UseVisualStyleBackColor = true;
             this.butt_Calculate.Click += new System.EventHandler(this.butt_Calculate_Click);
-            // 
-            // tb_Total
-            // 
-            this.tb_Total.Enabled = false;
-            this.tb_Total.Location = new System.Drawing.Point(341, 258);
-            this.tb_Total.Name = "tb_Total";
-            this.tb_Total.Size = new System.Drawing.Size(81, 20);
-            this.tb_Total.TabIndex = 4;
             // 
             // lbl_Roomates
             // 
@@ -129,34 +119,6 @@
             this.lbl_Roomates.Size = new System.Drawing.Size(98, 17);
             this.lbl_Roomates.TabIndex = 8;
             this.lbl_Roomates.Text = "No. Roomates";
-            // 
-            // lbl_TotalCost
-            // 
-            this.lbl_TotalCost.AutoSize = true;
-            this.lbl_TotalCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalCost.Location = new System.Drawing.Point(338, 238);
-            this.lbl_TotalCost.Name = "lbl_TotalCost";
-            this.lbl_TotalCost.Size = new System.Drawing.Size(72, 17);
-            this.lbl_TotalCost.TabIndex = 9;
-            this.lbl_TotalCost.Text = "Total Cost";
-            // 
-            // lbl_PerCost
-            // 
-            this.lbl_PerCost.AutoSize = true;
-            this.lbl_PerCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PerCost.Location = new System.Drawing.Point(430, 238);
-            this.lbl_PerCost.Name = "lbl_PerCost";
-            this.lbl_PerCost.Size = new System.Drawing.Size(111, 17);
-            this.lbl_PerCost.TabIndex = 11;
-            this.lbl_PerCost.Text = "Cost Per Person";
-            // 
-            // tb_TotalPerPerson
-            // 
-            this.tb_TotalPerPerson.Enabled = false;
-            this.tb_TotalPerPerson.Location = new System.Drawing.Point(433, 258);
-            this.tb_TotalPerPerson.Name = "tb_TotalPerPerson";
-            this.tb_TotalPerPerson.Size = new System.Drawing.Size(100, 20);
-            this.tb_TotalPerPerson.TabIndex = 5;
             // 
             // nud_Roomates
             // 
@@ -215,7 +177,6 @@
             this.rb_Three.Name = "rb_Three";
             this.rb_Three.Size = new System.Drawing.Size(64, 21);
             this.rb_Three.TabIndex = 2;
-            this.rb_Three.TabStop = true;
             this.rb_Three.Text = "Three";
             this.rb_Three.UseVisualStyleBackColor = true;
             // 
@@ -227,13 +188,13 @@
             this.rb_Two.Name = "rb_Two";
             this.rb_Two.Size = new System.Drawing.Size(52, 21);
             this.rb_Two.TabIndex = 1;
-            this.rb_Two.TabStop = true;
             this.rb_Two.Text = "Two";
             this.rb_Two.UseVisualStyleBackColor = true;
             // 
             // rb_One
             // 
             this.rb_One.AutoSize = true;
+            this.rb_One.Checked = true;
             this.rb_One.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_One.Location = new System.Drawing.Point(7, 20);
             this.rb_One.Name = "rb_One";
@@ -262,111 +223,155 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.Enabled = false;
             this.numericUpDown1.Location = new System.Drawing.Point(433, 160);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
             this.numericUpDown1.TabIndex = 23;
+            this.numericUpDown1.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(430, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "Discount Percent:";
+            this.label1.Visible = false;
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(224, 160);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(108, 20);
             this.textBox1.TabIndex = 18;
+            this.textBox1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(221, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Quantity of Item:";
+            this.label2.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(338, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 20;
             this.label3.Text = "Cost of Item:";
+            this.label3.Visible = false;
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(341, 160);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(83, 20);
             this.textBox2.TabIndex = 19;
+            this.textBox2.Visible = false;
             // 
             // numericUpDown2
             // 
+            this.numericUpDown2.Enabled = false;
             this.numericUpDown2.Location = new System.Drawing.Point(433, 203);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(114, 20);
             this.numericUpDown2.TabIndex = 29;
+            this.numericUpDown2.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(430, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 17);
             this.label4.TabIndex = 28;
             this.label4.Text = "Discount Percent:";
+            this.label4.Visible = false;
             // 
             // textBox3
             // 
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(224, 203);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(108, 20);
             this.textBox3.TabIndex = 24;
+            this.textBox3.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(221, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 17);
             this.label5.TabIndex = 27;
             this.label5.Text = "Quantity of Item:";
+            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(338, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 17);
             this.label6.TabIndex = 26;
             this.label6.Text = "Cost of Item:";
+            this.label6.Visible = false;
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(341, 203);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(83, 20);
             this.textBox4.TabIndex = 25;
+            this.textBox4.Visible = false;
+            // 
+            // butt_Reset
+            // 
+            this.butt_Reset.Location = new System.Drawing.Point(341, 241);
+            this.butt_Reset.Name = "butt_Reset";
+            this.butt_Reset.Size = new System.Drawing.Size(83, 34);
+            this.butt_Reset.TabIndex = 30;
+            this.butt_Reset.Text = "Reset";
+            this.butt_Reset.UseVisualStyleBackColor = true;
+            // 
+            // butt_Help
+            // 
+            this.butt_Help.Location = new System.Drawing.Point(452, 242);
+            this.butt_Help.Name = "butt_Help";
+            this.butt_Help.Size = new System.Drawing.Size(95, 34);
+            this.butt_Help.TabIndex = 31;
+            this.butt_Help.Text = "Help";
+            this.butt_Help.UseVisualStyleBackColor = true;
             // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 287);
+            this.Controls.Add(this.butt_Help);
+            this.Controls.Add(this.butt_Reset);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -384,11 +389,7 @@
             this.Controls.Add(this.gb_Purchases);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nud_Roomates);
-            this.Controls.Add(this.lbl_PerCost);
-            this.Controls.Add(this.tb_TotalPerPerson);
-            this.Controls.Add(this.lbl_TotalCost);
             this.Controls.Add(this.lbl_Roomates);
-            this.Controls.Add(this.tb_Total);
             this.Controls.Add(this.butt_Calculate);
             this.Controls.Add(this.tb_Quantity1);
             this.Controls.Add(this.lbl_Quantity1);
@@ -416,11 +417,7 @@
         private System.Windows.Forms.Label lbl_Quantity1;
         private System.Windows.Forms.TextBox tb_Quantity1;
         private System.Windows.Forms.Button butt_Calculate;
-        private System.Windows.Forms.TextBox tb_Total;
         private System.Windows.Forms.Label lbl_Roomates;
-        private System.Windows.Forms.Label lbl_TotalCost;
-        private System.Windows.Forms.Label lbl_PerCost;
-        private System.Windows.Forms.TextBox tb_TotalPerPerson;
         private System.Windows.Forms.NumericUpDown nud_Roomates;
         private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -442,6 +439,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button butt_Reset;
+        private System.Windows.Forms.Button butt_Help;
     }
 }
 

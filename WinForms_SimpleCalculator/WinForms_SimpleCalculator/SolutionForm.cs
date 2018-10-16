@@ -16,5 +16,16 @@ namespace WinForms_SimpleCalculator
         {
             InitializeComponent();
         }
+
+        public void SetTotals(string total, string totalPer)
+        {
+            tb_Total.Text = total;
+            tb_TotalPerPerson.Text = totalPer;
+        }
+
+        private void butt_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -44,8 +44,21 @@ namespace WinForms_SimpleCalculator
 
             if (pass)
             {
-                tb_Total.Text = "$" + (num1 * num2).ToString();
-                tb_TotalPerPerson.Text = "$" + ((num1 * num2) / num3).ToString();
+                FormCollection fc = Application.OpenForms;
+                foreach (Form f in fc)
+                {
+                    if (f.GetType() == typeof(SolutionForm))
+                    {
+                        f.Close();
+                        break;
+                    }
+                }
+
+                SolutionForm sf = new SolutionForm();
+                string total = "$" + (num1 * num2).ToString();
+                string totalPer = "$" + ((num1 * num2) / num3).ToString();
+                sf.SetTotals(total, totalPer);
+                sf.Show();
             }
         }
     }
