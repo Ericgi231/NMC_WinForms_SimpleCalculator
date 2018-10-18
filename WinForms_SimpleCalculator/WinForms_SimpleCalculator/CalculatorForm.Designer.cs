@@ -44,31 +44,38 @@
             this.rb_One = new System.Windows.Forms.RadioButton();
             this.lbl_Discount1 = new System.Windows.Forms.Label();
             this.nud_Discount1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.butt_Reset = new System.Windows.Forms.Button();
             this.butt_Help = new System.Windows.Forms.Button();
+            this.butt_Close = new System.Windows.Forms.Button();
+            this.pan_Item1 = new System.Windows.Forms.Panel();
+            this.pan_Item2 = new System.Windows.Forms.Panel();
+            this.lbl_Quantity2 = new System.Windows.Forms.Label();
+            this.tb_Quantity2 = new System.Windows.Forms.TextBox();
+            this.lbl_Cost2 = new System.Windows.Forms.Label();
+            this.tb_Cost2 = new System.Windows.Forms.TextBox();
+            this.nud_Discount2 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Discount2 = new System.Windows.Forms.Label();
+            this.pan_Item3 = new System.Windows.Forms.Panel();
+            this.lbl_Quantity3 = new System.Windows.Forms.Label();
+            this.tb_Quantity3 = new System.Windows.Forms.TextBox();
+            this.lbl_Cost3 = new System.Windows.Forms.Label();
+            this.tb_Cost3 = new System.Windows.Forms.TextBox();
+            this.nud_Discount3 = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Discount3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Roomates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gb_Purchases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Discount1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.pan_Item1.SuspendLayout();
+            this.pan_Item2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Discount2)).BeginInit();
+            this.pan_Item3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Discount3)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_Cost1
             // 
-            this.tb_Cost1.Location = new System.Drawing.Point(341, 117);
+            this.tb_Cost1.Location = new System.Drawing.Point(117, 17);
             this.tb_Cost1.Name = "tb_Cost1";
             this.tb_Cost1.Size = new System.Drawing.Size(83, 20);
             this.tb_Cost1.TabIndex = 1;
@@ -77,7 +84,7 @@
             // 
             this.lbl_Cost1.AutoSize = true;
             this.lbl_Cost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Cost1.Location = new System.Drawing.Point(338, 97);
+            this.lbl_Cost1.Location = new System.Drawing.Point(114, 0);
             this.lbl_Cost1.Name = "lbl_Cost1";
             this.lbl_Cost1.Size = new System.Drawing.Size(86, 17);
             this.lbl_Cost1.TabIndex = 2;
@@ -87,7 +94,7 @@
             // 
             this.lbl_Quantity1.AutoSize = true;
             this.lbl_Quantity1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Quantity1.Location = new System.Drawing.Point(221, 97);
+            this.lbl_Quantity1.Location = new System.Drawing.Point(-3, 0);
             this.lbl_Quantity1.Name = "lbl_Quantity1";
             this.lbl_Quantity1.Size = new System.Drawing.Size(111, 17);
             this.lbl_Quantity1.TabIndex = 3;
@@ -95,7 +102,7 @@
             // 
             // tb_Quantity1
             // 
-            this.tb_Quantity1.Location = new System.Drawing.Point(224, 117);
+            this.tb_Quantity1.Location = new System.Drawing.Point(0, 17);
             this.tb_Quantity1.Name = "tb_Quantity1";
             this.tb_Quantity1.Size = new System.Drawing.Size(108, 20);
             this.tb_Quantity1.TabIndex = 0;
@@ -179,6 +186,7 @@
             this.rb_Three.TabIndex = 2;
             this.rb_Three.Text = "Three";
             this.rb_Three.UseVisualStyleBackColor = true;
+            this.rb_Three.CheckedChanged += new System.EventHandler(this.rb_Three_CheckedChanged);
             // 
             // rb_Two
             // 
@@ -190,6 +198,7 @@
             this.rb_Two.TabIndex = 1;
             this.rb_Two.Text = "Two";
             this.rb_Two.UseVisualStyleBackColor = true;
+            this.rb_Two.CheckedChanged += new System.EventHandler(this.rb_Two_CheckedChanged);
             // 
             // rb_One
             // 
@@ -203,12 +212,13 @@
             this.rb_One.TabStop = true;
             this.rb_One.Text = "One";
             this.rb_One.UseVisualStyleBackColor = true;
+            this.rb_One.CheckedChanged += new System.EventHandler(this.rb_One_CheckedChanged);
             // 
             // lbl_Discount1
             // 
             this.lbl_Discount1.AutoSize = true;
             this.lbl_Discount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Discount1.Location = new System.Drawing.Point(430, 97);
+            this.lbl_Discount1.Location = new System.Drawing.Point(206, 0);
             this.lbl_Discount1.Name = "lbl_Discount1";
             this.lbl_Discount1.Size = new System.Drawing.Size(120, 17);
             this.lbl_Discount1.TabIndex = 15;
@@ -216,136 +226,10 @@
             // 
             // nud_Discount1
             // 
-            this.nud_Discount1.Location = new System.Drawing.Point(433, 117);
+            this.nud_Discount1.Location = new System.Drawing.Point(209, 17);
             this.nud_Discount1.Name = "nud_Discount1";
             this.nud_Discount1.Size = new System.Drawing.Size(114, 20);
             this.nud_Discount1.TabIndex = 17;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Enabled = false;
-            this.numericUpDown1.Location = new System.Drawing.Point(433, 160);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDown1.TabIndex = 23;
-            this.numericUpDown1.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(430, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Discount Percent:";
-            this.label1.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(224, 160);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(221, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Quantity of Item:";
-            this.label2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Enabled = false;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(338, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Cost of Item:";
-            this.label3.Visible = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(341, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(83, 20);
-            this.textBox2.TabIndex = 19;
-            this.textBox2.Visible = false;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Enabled = false;
-            this.numericUpDown2.Location = new System.Drawing.Point(433, 203);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(114, 20);
-            this.numericUpDown2.TabIndex = 29;
-            this.numericUpDown2.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Enabled = false;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(430, 183);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 17);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Discount Percent:";
-            this.label4.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(224, 203);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(108, 20);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(221, 183);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 17);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Quantity of Item:";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(338, 183);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Cost of Item:";
-            this.label6.Visible = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(341, 203);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(83, 20);
-            this.textBox4.TabIndex = 25;
-            this.textBox4.Visible = false;
             // 
             // butt_Reset
             // 
@@ -355,47 +239,187 @@
             this.butt_Reset.TabIndex = 30;
             this.butt_Reset.Text = "Reset";
             this.butt_Reset.UseVisualStyleBackColor = true;
+            this.butt_Reset.Click += new System.EventHandler(this.butt_Reset_Click);
             // 
             // butt_Help
             // 
-            this.butt_Help.Location = new System.Drawing.Point(452, 242);
+            this.butt_Help.Location = new System.Drawing.Point(433, 241);
             this.butt_Help.Name = "butt_Help";
-            this.butt_Help.Size = new System.Drawing.Size(95, 34);
+            this.butt_Help.Size = new System.Drawing.Size(54, 34);
             this.butt_Help.TabIndex = 31;
             this.butt_Help.Text = "Help";
             this.butt_Help.UseVisualStyleBackColor = true;
+            // 
+            // butt_Close
+            // 
+            this.butt_Close.Location = new System.Drawing.Point(493, 241);
+            this.butt_Close.Name = "butt_Close";
+            this.butt_Close.Size = new System.Drawing.Size(54, 34);
+            this.butt_Close.TabIndex = 32;
+            this.butt_Close.Text = "Close";
+            this.butt_Close.UseVisualStyleBackColor = true;
+            this.butt_Close.Click += new System.EventHandler(this.butt_Close_Click);
+            // 
+            // pan_Item1
+            // 
+            this.pan_Item1.Controls.Add(this.lbl_Quantity1);
+            this.pan_Item1.Controls.Add(this.tb_Quantity1);
+            this.pan_Item1.Controls.Add(this.lbl_Cost1);
+            this.pan_Item1.Controls.Add(this.tb_Cost1);
+            this.pan_Item1.Controls.Add(this.nud_Discount1);
+            this.pan_Item1.Controls.Add(this.lbl_Discount1);
+            this.pan_Item1.Location = new System.Drawing.Point(224, 100);
+            this.pan_Item1.Name = "pan_Item1";
+            this.pan_Item1.Size = new System.Drawing.Size(323, 37);
+            this.pan_Item1.TabIndex = 33;
+            // 
+            // pan_Item2
+            // 
+            this.pan_Item2.Controls.Add(this.lbl_Quantity2);
+            this.pan_Item2.Controls.Add(this.tb_Quantity2);
+            this.pan_Item2.Controls.Add(this.lbl_Cost2);
+            this.pan_Item2.Controls.Add(this.tb_Cost2);
+            this.pan_Item2.Controls.Add(this.nud_Discount2);
+            this.pan_Item2.Controls.Add(this.lbl_Discount2);
+            this.pan_Item2.Location = new System.Drawing.Point(224, 143);
+            this.pan_Item2.Name = "pan_Item2";
+            this.pan_Item2.Size = new System.Drawing.Size(323, 37);
+            this.pan_Item2.TabIndex = 34;
+            this.pan_Item2.Visible = false;
+            // 
+            // lbl_Quantity2
+            // 
+            this.lbl_Quantity2.AutoSize = true;
+            this.lbl_Quantity2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Quantity2.Location = new System.Drawing.Point(-3, 0);
+            this.lbl_Quantity2.Name = "lbl_Quantity2";
+            this.lbl_Quantity2.Size = new System.Drawing.Size(111, 17);
+            this.lbl_Quantity2.TabIndex = 3;
+            this.lbl_Quantity2.Text = "Quantity of Item:";
+            // 
+            // tb_Quantity2
+            // 
+            this.tb_Quantity2.Location = new System.Drawing.Point(0, 17);
+            this.tb_Quantity2.Name = "tb_Quantity2";
+            this.tb_Quantity2.Size = new System.Drawing.Size(108, 20);
+            this.tb_Quantity2.TabIndex = 0;
+            // 
+            // lbl_Cost2
+            // 
+            this.lbl_Cost2.AutoSize = true;
+            this.lbl_Cost2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Cost2.Location = new System.Drawing.Point(114, 0);
+            this.lbl_Cost2.Name = "lbl_Cost2";
+            this.lbl_Cost2.Size = new System.Drawing.Size(86, 17);
+            this.lbl_Cost2.TabIndex = 2;
+            this.lbl_Cost2.Text = "Cost of Item:";
+            // 
+            // tb_Cost2
+            // 
+            this.tb_Cost2.Location = new System.Drawing.Point(117, 17);
+            this.tb_Cost2.Name = "tb_Cost2";
+            this.tb_Cost2.Size = new System.Drawing.Size(83, 20);
+            this.tb_Cost2.TabIndex = 1;
+            // 
+            // nud_Discount2
+            // 
+            this.nud_Discount2.Location = new System.Drawing.Point(209, 17);
+            this.nud_Discount2.Name = "nud_Discount2";
+            this.nud_Discount2.Size = new System.Drawing.Size(114, 20);
+            this.nud_Discount2.TabIndex = 17;
+            // 
+            // lbl_Discount2
+            // 
+            this.lbl_Discount2.AutoSize = true;
+            this.lbl_Discount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Discount2.Location = new System.Drawing.Point(206, 0);
+            this.lbl_Discount2.Name = "lbl_Discount2";
+            this.lbl_Discount2.Size = new System.Drawing.Size(120, 17);
+            this.lbl_Discount2.TabIndex = 15;
+            this.lbl_Discount2.Text = "Discount Percent:";
+            // 
+            // pan_Item3
+            // 
+            this.pan_Item3.Controls.Add(this.lbl_Quantity3);
+            this.pan_Item3.Controls.Add(this.tb_Quantity3);
+            this.pan_Item3.Controls.Add(this.lbl_Cost3);
+            this.pan_Item3.Controls.Add(this.tb_Cost3);
+            this.pan_Item3.Controls.Add(this.nud_Discount3);
+            this.pan_Item3.Controls.Add(this.lbl_Discount3);
+            this.pan_Item3.Location = new System.Drawing.Point(224, 186);
+            this.pan_Item3.Name = "pan_Item3";
+            this.pan_Item3.Size = new System.Drawing.Size(323, 37);
+            this.pan_Item3.TabIndex = 34;
+            this.pan_Item3.Visible = false;
+            // 
+            // lbl_Quantity3
+            // 
+            this.lbl_Quantity3.AutoSize = true;
+            this.lbl_Quantity3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Quantity3.Location = new System.Drawing.Point(-3, 0);
+            this.lbl_Quantity3.Name = "lbl_Quantity3";
+            this.lbl_Quantity3.Size = new System.Drawing.Size(111, 17);
+            this.lbl_Quantity3.TabIndex = 3;
+            this.lbl_Quantity3.Text = "Quantity of Item:";
+            // 
+            // tb_Quantity3
+            // 
+            this.tb_Quantity3.Location = new System.Drawing.Point(0, 17);
+            this.tb_Quantity3.Name = "tb_Quantity3";
+            this.tb_Quantity3.Size = new System.Drawing.Size(108, 20);
+            this.tb_Quantity3.TabIndex = 0;
+            // 
+            // lbl_Cost3
+            // 
+            this.lbl_Cost3.AutoSize = true;
+            this.lbl_Cost3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Cost3.Location = new System.Drawing.Point(114, 0);
+            this.lbl_Cost3.Name = "lbl_Cost3";
+            this.lbl_Cost3.Size = new System.Drawing.Size(86, 17);
+            this.lbl_Cost3.TabIndex = 2;
+            this.lbl_Cost3.Text = "Cost of Item:";
+            // 
+            // tb_Cost3
+            // 
+            this.tb_Cost3.Location = new System.Drawing.Point(117, 17);
+            this.tb_Cost3.Name = "tb_Cost3";
+            this.tb_Cost3.Size = new System.Drawing.Size(83, 20);
+            this.tb_Cost3.TabIndex = 1;
+            // 
+            // nud_Discount3
+            // 
+            this.nud_Discount3.Location = new System.Drawing.Point(209, 17);
+            this.nud_Discount3.Name = "nud_Discount3";
+            this.nud_Discount3.Size = new System.Drawing.Size(114, 20);
+            this.nud_Discount3.TabIndex = 17;
+            // 
+            // lbl_Discount3
+            // 
+            this.lbl_Discount3.AutoSize = true;
+            this.lbl_Discount3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Discount3.Location = new System.Drawing.Point(206, 0);
+            this.lbl_Discount3.Name = "lbl_Discount3";
+            this.lbl_Discount3.Size = new System.Drawing.Size(120, 17);
+            this.lbl_Discount3.TabIndex = 15;
+            this.lbl_Discount3.Text = "Discount Percent:";
             // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 287);
+            this.ClientSize = new System.Drawing.Size(556, 287);
+            this.Controls.Add(this.pan_Item3);
+            this.Controls.Add(this.pan_Item2);
+            this.Controls.Add(this.pan_Item1);
+            this.Controls.Add(this.butt_Close);
             this.Controls.Add(this.butt_Help);
             this.Controls.Add(this.butt_Reset);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.nud_Discount1);
-            this.Controls.Add(this.lbl_Discount1);
             this.Controls.Add(this.gb_Purchases);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nud_Roomates);
             this.Controls.Add(this.lbl_Roomates);
             this.Controls.Add(this.butt_Calculate);
-            this.Controls.Add(this.tb_Quantity1);
-            this.Controls.Add(this.lbl_Quantity1);
-            this.Controls.Add(this.lbl_Cost1);
             this.Controls.Add(this.lbl_Title);
-            this.Controls.Add(this.tb_Cost1);
             this.Name = "CalculatorForm";
             this.Text = "Calculator";
             ((System.ComponentModel.ISupportInitialize)(this.nud_Roomates)).EndInit();
@@ -403,8 +427,14 @@
             this.gb_Purchases.ResumeLayout(false);
             this.gb_Purchases.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Discount1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.pan_Item1.ResumeLayout(false);
+            this.pan_Item1.PerformLayout();
+            this.pan_Item2.ResumeLayout(false);
+            this.pan_Item2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Discount2)).EndInit();
+            this.pan_Item3.ResumeLayout(false);
+            this.pan_Item3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Discount3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,20 +457,24 @@
         private System.Windows.Forms.RadioButton rb_Three;
         private System.Windows.Forms.Label lbl_Discount1;
         private System.Windows.Forms.NumericUpDown nud_Discount1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button butt_Reset;
         private System.Windows.Forms.Button butt_Help;
+        private System.Windows.Forms.Button butt_Close;
+        private System.Windows.Forms.Panel pan_Item1;
+        private System.Windows.Forms.Panel pan_Item2;
+        private System.Windows.Forms.Label lbl_Quantity2;
+        private System.Windows.Forms.TextBox tb_Quantity2;
+        private System.Windows.Forms.Label lbl_Cost2;
+        private System.Windows.Forms.TextBox tb_Cost2;
+        private System.Windows.Forms.NumericUpDown nud_Discount2;
+        private System.Windows.Forms.Label lbl_Discount2;
+        private System.Windows.Forms.Panel pan_Item3;
+        private System.Windows.Forms.Label lbl_Quantity3;
+        private System.Windows.Forms.TextBox tb_Quantity3;
+        private System.Windows.Forms.Label lbl_Cost3;
+        private System.Windows.Forms.TextBox tb_Cost3;
+        private System.Windows.Forms.NumericUpDown nud_Discount3;
+        private System.Windows.Forms.Label lbl_Discount3;
     }
 }
 
