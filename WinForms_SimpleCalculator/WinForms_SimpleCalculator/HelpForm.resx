@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>This calculator is used to determine how much each roomate should pay for shared goods.
+1. Select the ammount of items purchased in the top left
+2. Select number of roomates in the top right
+3. Enter the individual price and quantity of each item purchased
+4. Set the discount percent for any items you have coupons for</value>
+  </data>
 </root>

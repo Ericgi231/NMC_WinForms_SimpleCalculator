@@ -16,5 +16,10 @@ namespace WinForms_SimpleCalculator
         {
             InitializeComponent();
         }
+
+        private void butt_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

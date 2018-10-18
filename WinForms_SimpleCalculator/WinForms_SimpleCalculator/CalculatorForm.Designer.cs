@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.tb_Cost1 = new System.Windows.Forms.TextBox();
             this.lbl_Cost1 = new System.Windows.Forms.Label();
             this.lbl_Quantity1 = new System.Windows.Forms.Label();
@@ -156,7 +155,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::WinForms_SimpleCalculator.Properties.Resources.kitchen;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 264);
@@ -249,6 +248,7 @@
             this.butt_Help.TabIndex = 31;
             this.butt_Help.Text = "Help";
             this.butt_Help.UseVisualStyleBackColor = true;
+            this.butt_Help.Click += new System.EventHandler(this.butt_Help_Click);
             // 
             // butt_Close
             // 

@@ -17,10 +17,10 @@ namespace WinForms_SimpleCalculator
             InitializeComponent();
         }
 
-        public void SetTotals(string total, string totalPer)
+        public void SetTotals(Totals totals)
         {
-            tb_Total.Text = total;
-            tb_TotalPerPerson.Text = totalPer;
+            tb_Total.Text = "$" + totals.GrandTotal.ToString();
+            tb_TotalPerPerson.Text = "$" + totals.GrandTotalPerPerson.ToString();
         }
 
         private void butt_Back_Click(object sender, EventArgs e)
